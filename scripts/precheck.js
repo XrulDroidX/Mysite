@@ -3,9 +3,8 @@ const path = require('node:path')
 
 const mustHave = [
   'content/posts',
-  'public/admin/config.yml',
-  'app/sitemap.xml/route.ts',
-  'app/rss.xml/route.ts'
+  'public/admin/config.yml'
+  // route handlers tidak wajib untuk static export
 ]
 
 for (const p of mustHave) {
