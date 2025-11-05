@@ -1,22 +1,9 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   reactStrictMode: true,
-  experimental: { turbo: { rules: {} } },
   images: {
-    formats: ['image/avif','image/webp'],
-    remotePatterns: [
-      { protocol: 'https', hostname: '**' }
-    ]
+    formats: ['image/avif', 'image/webp'],
+    unoptimized: true,
   },
-  headers: async () => [
-    {
-      source: '/(.*)',
-      headers: [
-        { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
-        { key: 'X-Content-Type-Options', value: 'nosniff' },
-        { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' }
-      ]
-    }
-  ]
-};
-export default nextConfig;
+}
+export default nextConfig
