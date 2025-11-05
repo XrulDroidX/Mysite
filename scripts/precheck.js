@@ -8,8 +8,8 @@ const mustHave = [
   'app/rss.xml/route.ts'
 ]
 
-for (const p of mustHave){
-  if(!fs.existsSync(path.join(process.cwd(), p))){
+for (const p of mustHave) {
+  if (!fs.existsSync(path.join(process.cwd(), p))) {
     console.error('[precheck] Missing:', p)
     process.exit(1)
   }
