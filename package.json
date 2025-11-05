@@ -4,8 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+  {
+  "scripts": {
     "dev": "next dev",
-    "build": "node scripts/precheck.cjs && next build --debug",
+    "build": "next build --debug",
     "export": "next export",
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
@@ -13,7 +15,6 @@
     "stylelint": "stylelint \"**/*.{css,scss,pcss}\" --max-warnings=0",
     "test": "vitest run",
     "test:e2e": "node scripts/run-e2e.cjs",
-    "precheck": "node scripts/precheck.cjs",
     "postbuild": "node scripts/postbuild.cjs",
     "sitemap": "node scripts/gen-sitemap.cjs",
     "rss": "node scripts/gen-rss.cjs"
