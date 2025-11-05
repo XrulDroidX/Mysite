@@ -5,17 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "npm run precheck && next build",
+    "build": "node scripts/precheck.cjs && next build",
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
     "format": "prettier -w .",
     "stylelint": "stylelint \"**/*.{css,scss,pcss}\" --max-warnings=0",
     "test": "vitest run",
-    "test:e2e": "node scripts/run-e2e.js",
-    "precheck": "node scripts/precheck.js",
-    "postbuild": "node scripts/postbuild.js",
-    "sitemap": "node scripts/gen-sitemap.js",
-    "rss": "node scripts/gen-rss.js"
+    "test:e2e": "node scripts/run-e2e.cjs",
+    "precheck": "node scripts/precheck.cjs",
+    "postbuild": "node scripts/postbuild.cjs",
+    "sitemap": "node scripts/gen-sitemap.cjs",
+    "rss": "node scripts/gen-rss.cjs"
   },
   "dependencies": {
     "next": "14.2.5",
