@@ -4,7 +4,7 @@ const path = require('node:path')
 const mustHave = [
   'content/posts',
   'public/admin/config.yml'
-  // route handlers tidak wajib untuk static export
+  // rute server tidak wajib untuk static export
 ]
 
 for (const p of mustHave) {
