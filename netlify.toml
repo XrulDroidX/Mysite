@@ -1,0 +1,29 @@
+[build]
+  command = "npm run build && npm run sitemap"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NEXT_PRIVATE_TARGET = "server"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; img-src 'self' https: data:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline'; frame-src https://www.google.com; connect-src 'self' https:"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[forms]
+  enabled = true
+
+
+[functions]
+  node_bundler = "esbuild"
+
+[[events]]
+  event = "submission-created"
+  handler = "netlify/functions/submission-created.js"

@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "public/uploads"
+public_folder: "/uploads"
+collections:
+  - name: "posts"
+    label: "Berita & Artikel"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Judul", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Tanggal", name: "date", widget: "datetime"}
+      - {label: "Penulis", name: "author", widget: "string"}
+      - {label: "Cover", name: "cover", widget: "image", required: false}
+      - {label: "Ringkasan", name: "summary", widget: "text"}
+      - {label: "Tag", name: "tags", widget: "list", required: false}
+      - {label: "Status", name: "status", widget: "select", options: ["draft","published"], default: "published"}
+      - {label: "Konten", name: "body", widget: "markdown"}

@@ -1,0 +1,4 @@
+/* Minimal print adjustments */
+@media print {
+  a::after { content: " (" attr(href) ") "; font-size: 90%; }
+}
