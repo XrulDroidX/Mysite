@@ -1,12 +1,15 @@
 [build]
-  command = "npm run build && npm run sitemap"
-  publish = ".next"
+  command = "npm run build"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[build.environment]
-  NEXT_PRIVATE_TARGET = "server"
+[functions]
+  node_bundler = "esbuild"
+
+[[events]]
+  event = "submission-created"
+  handler = "netlify/functions/submission-created.js"
 
 [[headers]]
   for = "/*"
@@ -19,11 +22,3 @@
 
 [forms]
   enabled = true
-
-
-[functions]
-  node_bundler = "esbuild"
-
-[[events]]
-  event = "submission-created"
-  handler = "netlify/functions/submission-created.js"
