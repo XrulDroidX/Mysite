@@ -4,8 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+  {
+  "scripts": {
     "dev": "next dev",
-    "build": "node scripts/precheck.cjs && next build",
+    "build": "node scripts/precheck.cjs && next build --debug",
+    "export": "next export",
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
     "format": "prettier -w .",
@@ -16,6 +19,7 @@
     "postbuild": "node scripts/postbuild.cjs",
     "sitemap": "node scripts/gen-sitemap.cjs",
     "rss": "node scripts/gen-rss.cjs"
+  }
   },
   "dependencies": {
     "next": "14.2.5",
